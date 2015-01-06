@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Dot {
+    protected int no;
     private final int x;
     private final int y;
     private List<Player> players = new ArrayList<Player>();
@@ -17,7 +18,8 @@ public abstract class Dot {
         return result;
     }
 
-    public Dot(int x, int y) {
+    public Dot(int no, int x, int y) {
+        this.no = no;
         this.x = x;
         this.y = y;
     }
@@ -38,7 +40,10 @@ public abstract class Dot {
 
     public void onPlayerEnter(Player player) {
         players.add(player);
+        doInDot();
     }
+
+    protected void doInDot(){}
 
     public boolean isInclude(Player player) {
         return players.contains(player);

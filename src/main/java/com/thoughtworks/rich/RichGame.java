@@ -1,6 +1,6 @@
 package com.thoughtworks.rich;
 
-import java.util.Scanner;
+import com.thoughtworks.rich.io.IO;
 
 public class RichGame {
     public static final String QUIT_COMMAND = "quit";
@@ -14,10 +14,12 @@ public class RichGame {
 
     public void run() {
         System.out.println(richMap.mapString());
-        Scanner scanner = new Scanner(System.in);
         Player player = new Player("A", richMap.startingPoint());
-        while(scanner.hasNext()) {
-            String command = scanner.next();
+
+        IO io = IO.getInstance();
+
+        String command;
+        while(!"".equals(command = io.nextLine())) {
             if(QUIT_COMMAND.equals(command)) {
                 System.out.println("游戏结束");
                 break;
@@ -25,6 +27,7 @@ public class RichGame {
             if(WORD_COMMAND.equals(command)) {
                 work(player, richMap);
             }
+            System.out.println("(after executing command: " + command + ")");
             System.out.println(richMap.mapString());
         }
     }

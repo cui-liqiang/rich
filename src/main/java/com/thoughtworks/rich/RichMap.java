@@ -15,86 +15,88 @@ public class RichMap {
         mapWidth = 29;
         mapHeight = 8;
 
-        dots.add(new StartDot(0, 0));
-        dots.add(new Land(0, 1, 200));
-        dots.add(new Land(0, 2, 200));
-        dots.add(new Land(0, 3, 200));
-        dots.add(new Land(0, 4, 200));
-        dots.add(new Land(0, 5, 200));
-        dots.add(new Land(0, 6, 200));
-        dots.add(new Land(0, 7, 200));
-        dots.add(new Land(0, 8, 200));
-        dots.add(new Land(0, 9, 200));
-        dots.add(new Land(0, 10, 200));
-        dots.add(new Land(0, 11, 200));
-        dots.add(new Land(0, 12, 200));
-        dots.add(new Land(0, 13, 200));
+        int no = 0;
 
-        dots.add(new Hospital(0, 14));
+        dots.add(new StartDot(no++, 0, 0));
+        dots.add(new Land(no++, 0, 1, 200));
+        dots.add(new Land(no++, 0, 2, 200));
+        dots.add(new Land(no++, 0, 3, 200));
+        dots.add(new Land(no++, 0, 4, 200));
+        dots.add(new Land(no++, 0, 5, 200));
+        dots.add(new Land(no++, 0, 6, 200));
+        dots.add(new Land(no++, 0, 7, 200));
+        dots.add(new Land(no++, 0, 8, 200));
+        dots.add(new Land(no++, 0, 9, 200));
+        dots.add(new Land(no++, 0, 10, 200));
+        dots.add(new Land(no++, 0, 11, 200));
+        dots.add(new Land(no++, 0, 12, 200));
+        dots.add(new Land(no++, 0, 13, 200));
 
-        dots.add(new Land(0, 15, 400));
-        dots.add(new Land(0, 16, 400));
-        dots.add(new Land(0, 17, 400));
-        dots.add(new Land(0, 18, 400));
-        dots.add(new Land(0, 19, 400));
-        dots.add(new Land(0, 20, 400));
-        dots.add(new Land(0, 21, 400));
-        dots.add(new Land(0, 22, 400));
-        dots.add(new Land(0, 23, 400));
-        dots.add(new Land(0, 24, 400));
-        dots.add(new Land(0, 25, 400));
-        dots.add(new Land(0, 26, 400));
-        dots.add(new Land(0, 27, 400));
+        dots.add(new Hospital(no++, 0, 14));
 
-        dots.add(new Mall(0, 28, 0, 30));
+        dots.add(new Land(no++, 0, 15, 400));
+        dots.add(new Land(no++, 0, 16, 400));
+        dots.add(new Land(no++, 0, 17, 400));
+        dots.add(new Land(no++, 0, 18, 400));
+        dots.add(new Land(no++, 0, 19, 400));
+        dots.add(new Land(no++, 0, 20, 400));
+        dots.add(new Land(no++, 0, 21, 400));
+        dots.add(new Land(no++, 0, 22, 400));
+        dots.add(new Land(no++, 0, 23, 400));
+        dots.add(new Land(no++, 0, 24, 400));
+        dots.add(new Land(no++, 0, 25, 400));
+        dots.add(new Land(no++, 0, 26, 400));
+        dots.add(new Land(no++, 0, 27, 400));
 
-        dots.add(new Land(1, 28, 600));
-        dots.add(new Land(2, 28, 600));
-        dots.add(new Land(3, 28, 600));
-        dots.add(new Land(4, 28, 600));
-        dots.add(new Land(5, 28, 600));
-        dots.add(new Land(6, 28, 600));
+        dots.add(new Mall(no++, 0, 28, 0, 30));
 
-        dots.add(new Mall(7, 28, 0, 50));
+        dots.add(new Land(no++, 1, 28, 600));
+        dots.add(new Land(no++, 2, 28, 600));
+        dots.add(new Land(no++, 3, 28, 600));
+        dots.add(new Land(no++, 4, 28, 600));
+        dots.add(new Land(no++, 5, 28, 600));
+        dots.add(new Land(no++, 6, 28, 600));
 
-        dots.add(new Land(7, 27, 800));
-        dots.add(new Land(7, 26, 800));
-        dots.add(new Land(7, 25, 800));
-        dots.add(new Land(7, 24, 800));
-        dots.add(new Land(7, 23, 800));
-        dots.add(new Land(7, 22, 800));
-        dots.add(new Land(7, 21, 800));
-        dots.add(new Land(7, 20, 800));
-        dots.add(new Land(7, 19, 800));
-        dots.add(new Land(7, 18, 800));
-        dots.add(new Land(7, 17, 800));
-        dots.add(new Land(7, 16, 800));
-        dots.add(new Land(7, 15, 800));
+        dots.add(new Mall(no++, 7, 28, 0, 50));
 
-        dots.add(new ChinaListening(7, 14));
+        dots.add(new Land(no++, 7, 27, 800));
+        dots.add(new Land(no++, 7, 26, 800));
+        dots.add(new Land(no++, 7, 25, 800));
+        dots.add(new Land(no++, 7, 24, 800));
+        dots.add(new Land(no++, 7, 23, 800));
+        dots.add(new Land(no++, 7, 22, 800));
+        dots.add(new Land(no++, 7, 21, 800));
+        dots.add(new Land(no++, 7, 20, 800));
+        dots.add(new Land(no++, 7, 19, 800));
+        dots.add(new Land(no++, 7, 18, 800));
+        dots.add(new Land(no++, 7, 17, 800));
+        dots.add(new Land(no++, 7, 16, 800));
+        dots.add(new Land(no++, 7, 15, 800));
 
-        dots.add(new Land(7, 13, 1000));
-        dots.add(new Land(7, 12, 1000));
-        dots.add(new Land(7, 11, 1000));
-        dots.add(new Land(7, 10, 1000));
-        dots.add(new Land(7, 9, 1000));
-        dots.add(new Land(7, 8, 1000));
-        dots.add(new Land(7, 7, 1000));
-        dots.add(new Land(7, 6, 1000));
-        dots.add(new Land(7, 5, 1000));
-        dots.add(new Land(7, 4, 1000));
-        dots.add(new Land(7, 3, 1000));
-        dots.add(new Land(7, 2, 1000));
-        dots.add(new Land(7, 1, 1000));
+        dots.add(new ChinaListening(no++, 7, 14));
 
-        dots.add(new Audit(7, 0));
+        dots.add(new Land(no++, 7, 13, 1000));
+        dots.add(new Land(no++, 7, 12, 1000));
+        dots.add(new Land(no++, 7, 11, 1000));
+        dots.add(new Land(no++, 7, 10, 1000));
+        dots.add(new Land(no++, 7, 9, 1000));
+        dots.add(new Land(no++, 7, 8, 1000));
+        dots.add(new Land(no++, 7, 7, 1000));
+        dots.add(new Land(no++, 7, 6, 1000));
+        dots.add(new Land(no++, 7, 5, 1000));
+        dots.add(new Land(no++, 7, 4, 1000));
+        dots.add(new Land(no++, 7, 3, 1000));
+        dots.add(new Land(no++, 7, 2, 1000));
+        dots.add(new Land(no++, 7, 1, 1000));
 
-        dots.add(new FinanceRoom(6, 0, 30));
-        dots.add(new FinanceRoom(5, 0, 50));
-        dots.add(new FinanceRoom(4, 0, 80));
-        dots.add(new FinanceRoom(3, 0, 80));
-        dots.add(new FinanceRoom(2, 0, 50));
-        dots.add(new FinanceRoom(1, 0, 30));
+        dots.add(new Audit(no++, 7, 0));
+
+        dots.add(new FinanceRoom(no++, 6, 0, 30));
+        dots.add(new FinanceRoom(no++, 5, 0, 50));
+        dots.add(new FinanceRoom(no++, 4, 0, 80));
+        dots.add(new FinanceRoom(no++, 3, 0, 80));
+        dots.add(new FinanceRoom(no++, 2, 0, 50));
+        dots.add(new FinanceRoom(no++, 1, 0, 30));
     }
 
     public String mapString() {

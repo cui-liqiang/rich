@@ -27,7 +27,7 @@ public class RichMapTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void should_throw_exception_if_dot_is_not_in_map() {
-        Land landNotInMap = new Land(1, 2, 100);
+        Land landNotInMap = new Land(0, 1, 2, 100);
         int anyStep = 3;
 
         map.nStepsAfterDot(landNotInMap, anyStep);
