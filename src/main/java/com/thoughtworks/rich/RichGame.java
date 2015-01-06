@@ -1,3 +1,5 @@
+package com.thoughtworks.rich;
+
 import java.util.Scanner;
 
 public class RichGame {

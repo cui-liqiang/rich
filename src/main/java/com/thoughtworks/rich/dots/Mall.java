@@ -1,3 +1,5 @@
+package com.thoughtworks.rich.dots;
+
 public class Mall extends Dot {
     private final int minConsume;
     private final int maxConsume;

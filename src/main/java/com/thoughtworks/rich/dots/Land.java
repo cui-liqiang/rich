@@ -1,3 +1,5 @@
+package com.thoughtworks.rich.dots;
+
 public class Land extends Dot {
     private final int price;
 

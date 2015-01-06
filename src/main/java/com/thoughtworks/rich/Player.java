@@ -1,3 +1,7 @@
+package com.thoughtworks.rich;
+
+import com.thoughtworks.rich.dots.Dot;
+
 public class Player {
     private String displayName;
     private Dot dot;

@@ -1,3 +1,7 @@
+package com.thoughtworks.rich;
+
+import com.thoughtworks.rich.dots.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

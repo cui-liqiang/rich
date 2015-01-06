@@ -1,3 +1,5 @@
+package com.thoughtworks.rich.dots;
+
 public class Audit extends Dot {
     public Audit(int x, int y) {
         super(x, y);
