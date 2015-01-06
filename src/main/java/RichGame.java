@@ -2,9 +2,15 @@ import java.util.Scanner;
 
 public class RichGame {
     public static final String QUIT_COMMAND = "quit";
+    private Dice dice;
+    private RichMap richMap = new RichMap();
+
+    public RichGame(Dice dice) {
+        this.dice = dice;
+    }
 
     public void run() {
-        showMap();
+        System.out.println(richMap.mapString());
         Scanner scanner = new Scanner(System.in);
         while(scanner.hasNext()) {
             if(QUIT_COMMAND.equals(scanner.next())) {
@@ -12,16 +18,5 @@ public class RichGame {
                 break;
             }
         }
-    }
-
-    private void showMap() {
-        System.out.println("S0000000000000Y0000000000000Z\n" +
-                            "$                           0\n" +
-                            "$                           0\n" +
-                            "$                           0\n" +
-                            "$                           0\n" +
-                            "$                           0\n" +
-                            "$                           0\n" +
-                            "J0000000000000T0000000000000Z");
     }
 }
