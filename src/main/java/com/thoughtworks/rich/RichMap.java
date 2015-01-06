@@ -129,7 +129,7 @@ public class RichMap {
                 return dots.get(((i + steps) % dotsNum()));
             }
         }
-        throw new IllegalArgumentException("dot " + current.toString() + " is not in the map");
+        throw new IllegalArgumentException("locatingDot " + current.toString() + " is not in the map");
     }
 
     public Dot dotAt(int pos) {

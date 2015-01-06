@@ -4,17 +4,21 @@ import com.thoughtworks.rich.dots.Dot;
 
 public class Player {
     private String displayName;
-    protected Dot dot;
+    protected Dot locatingDot;
 
     public Player(String displayName, Dot dot) {
         this.displayName = displayName;
-        this.dot = dot;
+        dot.onPlayerEnter(this);
+        this.locatingDot = dot;
     }
 
     public void move(int steps, RichMap richMap) {
-        Dot destDot = richMap.nStepsAfterDot(dot, steps);
-        this.dot = destDot;
-        destDot.addStayingPlayer(this);
+        this.locatingDot.onPlayerLeave(this);
+
+        Dot destDot = richMap.nStepsAfterDot(locatingDot, steps);
+        destDot.onPlayerEnter(this);
+
+        this.locatingDot = destDot;
     }
 
     public String getDisplayName() {

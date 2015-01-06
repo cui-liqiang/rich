@@ -26,10 +26,6 @@ public abstract class Dot {
         map[x][y] = this.toString();
     }
 
-    public void addStayingPlayer(Player player) {
-        players.add(player);
-    }
-
     abstract public String defaultSymbol();
 
     @Override
@@ -38,6 +34,18 @@ public abstract class Dot {
             return defaultSymbol();
         }
         return players.get(players.size() - 1).getDisplayName();
+    }
+
+    public void onPlayerEnter(Player player) {
+        players.add(player);
+    }
+
+    public boolean isInclude(Player player) {
+        return players.contains(player);
+    }
+
+    public void onPlayerLeave(Player player) {
+        players.remove(player);
     }
 
     @Override
