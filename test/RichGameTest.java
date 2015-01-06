@@ -24,8 +24,8 @@ public class RichGameTest {
     }
 
     @Test
-    public void should_be_able_to_quit() {
-        String inputString = "quit\n";
+    public void should_be_able_to_draw_map() {
+        String inputString = "\26";
         InputStream in = new StringBufferInputStream(inputString);
         System.setIn(in);
         richGame.run();
@@ -40,6 +40,15 @@ public class RichGameTest {
 
         String actualOutput = outputStream.toString();
         assertThat(actualOutput, containsString(map));
-        assertThat(actualOutput, endsWith("游戏结束\n"));
+    }
+
+    @Test
+    public void should_be_able_to_quit() {
+        String inputString = "quit\n";
+        InputStream in = new StringBufferInputStream(inputString);
+        System.setIn(in);
+        richGame.run();
+
+        assertThat(outputStream.toString(), endsWith("游戏结束\n"));
     }
 }
