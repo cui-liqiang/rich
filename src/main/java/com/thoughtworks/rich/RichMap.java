@@ -124,11 +124,19 @@ public class RichMap {
     }
 
     public Dot nStepsAfterDot(Dot current, int steps) {
-        for(int i = 0;i < dots.size();i ++) {
-            if(dots.get(i) == current) {
-                return dots.get((i + steps));
+        for (int i = 0; i < dots.size(); i++) {
+            if (dots.get(i) == current) {
+                return dots.get(((i + steps) % dotsNum()));
             }
         }
         throw new IllegalArgumentException("dot " + current.toString() + " is not in the map");
+    }
+
+    public Dot dotAt(int pos) {
+        return dots.get(pos);
+    }
+
+    private int dotsNum() {
+        return (mapHeight + mapWidth) * 2 - 4;
     }
 }

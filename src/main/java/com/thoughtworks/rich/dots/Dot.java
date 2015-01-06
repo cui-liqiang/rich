@@ -1,5 +1,7 @@
 package com.thoughtworks.rich.dots;
 
+import com.thoughtworks.rich.Player;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,13 @@ public abstract class Dot {
     private final int x;
     private final int y;
     private List<Player> players = new ArrayList<Player>();
+
+    @Override
+    public int hashCode() {
+        int result = x;
+        result = 31 * result + y;
+        return result;
+    }
 
     public Dot(int x, int y) {
         this.x = x;
@@ -29,5 +38,18 @@ public abstract class Dot {
             return defaultSymbol();
         }
         return players.get(players.size() - 1).getDisplayName();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Dot)) return false;
+
+        Dot dot = (Dot) o;
+
+        if (x != dot.x) return false;
+        if (y != dot.y) return false;
+
+        return true;
     }
 }

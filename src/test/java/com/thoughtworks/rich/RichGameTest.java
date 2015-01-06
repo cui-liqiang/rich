@@ -1,7 +1,5 @@
 package com.thoughtworks.rich;
 
-import com.thoughtworks.rich.Dice;
-import com.thoughtworks.rich.RichGame;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
