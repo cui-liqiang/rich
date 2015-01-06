@@ -4,12 +4,12 @@ import java.util.List;
 
 public class RichMap {
     private final int mapWidth;
-    private final int mapHeigth;
+    private final int mapHeight;
     List<Dot> dots = new ArrayList<Dot>();
 
     public RichMap() {
         mapWidth = 29;
-        mapHeigth = 8;
+        mapHeight = 8;
 
         dots.add(new StartDot(0, 0));
         dots.add(new Land(0, 1, 200));
@@ -94,7 +94,7 @@ public class RichMap {
     }
 
     public String mapString() {
-        String map[][] = new String[mapHeigth][mapWidth];
+        String map[][] = new String[mapHeight][mapWidth];
         for (String[] rows : map) {
             Arrays.fill(rows, " ");
         }
@@ -113,5 +113,18 @@ public class RichMap {
         }
 
         return mapStr;
+    }
+
+    public Dot startingPoint() {
+        return dots.get(0);
+    }
+
+    public Dot nStepsAfterDot(Dot current, int steps) {
+        for(int i = 0;i < dots.size();i ++) {
+            if(dots.get(i) == current) {
+                return dots.get((i + steps));
+            }
+        }
+        throw new IllegalArgumentException("dot " + current.toString() + " is not in the map");
     }
 }

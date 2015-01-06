@@ -1,6 +1,5 @@
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.*;
@@ -63,7 +62,6 @@ public class RichGameTest {
         assertThat(outputStream.toString(), endsWith("游戏结束\n"));
     }
 
-    @Ignore
     @Test
     public void should_be_able_to_work_for_single_player_named_A() {
         setInput("work\n" + EOF);

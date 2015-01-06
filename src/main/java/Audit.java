@@ -3,8 +3,7 @@ public class Audit extends Dot {
         super(x, y);
     }
 
-    @Override
-    public String toString() {
+    public String defaultSymbol() {
         return "J";
     }
 }

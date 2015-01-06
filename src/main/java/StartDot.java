@@ -3,8 +3,7 @@ public class StartDot extends Dot{
         super(x, y);
     }
 
-    @Override
-    public String toString() {
+    public String defaultSymbol() {
         return "S";
     }
 }

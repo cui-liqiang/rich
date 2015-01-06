@@ -6,8 +6,7 @@ public class Land extends Dot {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
+    public String defaultSymbol() {
         return "0";
     }
 }

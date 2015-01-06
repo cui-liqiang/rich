@@ -8,8 +8,7 @@ public class Mall extends Dot {
         this.maxConsume = maxConsume;
     }
 
-    @Override
-    public String toString() {
+    public String defaultSymbol() {
         return "Z";
     }
 }

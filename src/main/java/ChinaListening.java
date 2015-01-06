@@ -3,8 +3,7 @@ public class ChinaListening extends Dot {
         super(x, y);
     }
 
-    @Override
-    public String toString() {
+    public String defaultSymbol() {
         return "T";
     }
 }
