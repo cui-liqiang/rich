@@ -2,11 +2,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.io.PrintStream;
+import java.io.*;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.endsWith;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class RichGameTest {
     RichGame richGame = new RichGame();
@@ -24,15 +24,22 @@ public class RichGameTest {
     }
 
     @Test
-    public void should_be_able_to_show_map() {
+    public void should_be_able_to_quit() {
+        String inputString = "quit\n";
+        InputStream in = new StringBufferInputStream(inputString);
+        System.setIn(in);
         richGame.run();
-        assertEquals("S0000000000000Y0000000000000Z\n" +
+        String map = "S0000000000000Y0000000000000Z\n" +
                 "$                           0\n" +
                 "$                           0\n" +
                 "$                           0\n" +
                 "$                           0\n" +
                 "$                           0\n" +
                 "$                           0\n" +
-                "J0000000000000T0000000000000Z\n", outputStream.toString());
+                "J0000000000000T0000000000000Z\n";
+
+        String actualOutput = outputStream.toString();
+        assertThat(actualOutput, containsString(map));
+        assertThat(actualOutput, endsWith("游戏结束\n"));
     }
 }
