@@ -5,8 +5,8 @@ import com.thoughtworks.rich.io.IO;
 public class Land extends Dot {
     private final int price;
 
-    public Land(int no, int x, int y, int price) {
-        super(no, x, y);
+    public Land(int no, int price) {
+        super(no);
         this.price = price;
     }
 
