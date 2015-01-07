@@ -1,8 +1,8 @@
 package com.thoughtworks.rich.dots;
 
 public class StartDot extends Dot{
-    public StartDot(int no, int x, int y) {
-        super(no, x, y);
+    public StartDot(int no) {
+        super(no);
     }
 
     public String defaultSymbol() {
