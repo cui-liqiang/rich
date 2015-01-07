@@ -96,7 +96,7 @@ public class RichMap {
         dots.add(new FinanceRoom(no++, 4, 0, 80));
         dots.add(new FinanceRoom(no++, 3, 0, 80));
         dots.add(new FinanceRoom(no++, 2, 0, 50));
-        dots.add(new FinanceRoom(no++, 1, 0, 30));
+        dots.add(new FinanceRoom(no, 1, 0, 30));
     }
 
     public String mapString() {
