@@ -14,7 +14,7 @@ public class PlayerTest extends IOTestBase{
     public void should_move_by_step() {
         setInput("Y\n");
 
-        Dot startingPoint = richMap.startingPoint();
+        Dot startingPoint = richMap.startingDot();
 
         Player player = new Player("A", startingPoint);
         player.move(4, richMap);

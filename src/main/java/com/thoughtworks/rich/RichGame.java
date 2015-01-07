@@ -14,7 +14,7 @@ public class RichGame {
 
     public void run() {
         System.out.println(richMap.mapString());
-        Player player = new Player("A", richMap.startingPoint());
+        Player player = new Player("A", richMap.startingDot());
 
         IO io = IO.getInstance();
 

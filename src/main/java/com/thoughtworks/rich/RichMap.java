@@ -97,29 +97,47 @@ public class RichMap {
     }
 
     public String mapString() {
-        String map[][] = new String[MAP_HEIGHT][MAP_WIDTH];
-        for (String[] rows : map) {
-            Arrays.fill(rows, " ");
-        }
+        String[][] map = blankMap();
+        fill(map);
+        return toString(map);
+    }
 
+    private String toString(String[][] map) {
+        String mapString = "";
+        for (String[] row : map) {
+            mapString += toRowString(row);
+        }
+        return mapString;
+    }
+
+    private String toRowString(String[] rows) {
+        String rowString = "";
+        for (String dot : rows) {
+            rowString += dot;
+        }
+        return rowString + "\n";
+    }
+
+    private void fill(String[][] map) {
         for (Dot dot : dots) {
             dot.fillMap(map);
         }
-
-        String mapStr = "";
-
-        for (String[] rows : map) {
-            for (String dot : rows) {
-                mapStr += (dot);
-            }
-            mapStr += "\n";
-        }
-
-        return mapStr;
     }
 
-    public Dot startingPoint() {
-        return dots.get(0);
+    private String[][] blankMap() {
+        String map[][] = new String[MAP_HEIGHT][MAP_WIDTH];
+        for (String[] row : map) {
+            Arrays.fill(row, " ");
+        }
+        return map;
+    }
+
+    public Dot startingDot() {
+        return dotAt(0);
+    }
+
+    public Dot dotAt(int pos) {
+        return dots.get(pos);
     }
 
     public Dot nStepsAfterDot(Dot current, int steps) {
@@ -129,10 +147,6 @@ public class RichMap {
             }
         }
         throw new IllegalArgumentException("locatingDot " + current.toString() + " is not in the map");
-    }
-
-    public Dot dotAt(int pos) {
-        return dots.get(pos);
     }
 
     private int dotsNum() {
