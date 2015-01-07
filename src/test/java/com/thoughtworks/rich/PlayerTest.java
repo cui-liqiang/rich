@@ -17,7 +17,7 @@ public class PlayerTest extends IOTestBase{
         Dot startingPoint = richMap.startingPoint();
 
         Player player = new Player("A", startingPoint);
-        player.move(4, richMap);
+        player.moveTo(richMap.getEventfulDotAfter(startingPoint, 4).getDot());
 
         assertThat(player.locatingDot, sameInstance(richMap.dotAt(4)));
         assertThat(startingPoint.isInclude(player), is(false));

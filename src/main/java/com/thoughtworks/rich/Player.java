@@ -12,16 +12,13 @@ public class Player {
         this.locatingDot = dot;
     }
 
-    public void move(int steps, RichMap richMap) {
-        this.locatingDot.onPlayerLeave(this);
-
-        Dot destDot = richMap.nStepsAfterDot(locatingDot, steps);
-        destDot.onPlayerEnter(this);
-
-        this.locatingDot = destDot;
-    }
-
     public String getDisplayName() {
         return displayName;
+    }
+
+    public void moveTo(Dot dot) {
+        this.locatingDot.onPlayerLeave(this);
+        this.locatingDot = dot;
+        dot.onPlayerEnter(this);
     }
 }
