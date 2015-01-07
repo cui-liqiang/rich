@@ -41,10 +41,7 @@ public abstract class Dot {
 
     public void onPlayerEnter(Player player) {
         players.add(player);
-        doInDot();
     }
-
-    protected void doInDot(){}
 
     public boolean isInclude(Player player) {
         return players.contains(player);
@@ -77,6 +74,10 @@ public abstract class Dot {
         } else {
             return new Pos(0, RichMap.MAP_WIDTH + RichMap.MAP_HEIGHT - 1 + RichMap.MAP_WIDTH - 1 + RichMap.MAP_HEIGHT - 1 - no - 1);
         }
+    }
+
+    public int getNo() {
+        return no;
     }
 
     private static class Pos {

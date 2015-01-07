@@ -1,6 +1,7 @@
 package com.thoughtworks.rich;
 
 import com.thoughtworks.rich.dots.*;
+import com.thoughtworks.rich.event.EventfulLand;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,76 +16,76 @@ public class RichMap {
         int no = 0;
 
         dots.add(new StartDot(no++));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
-        dots.add(new Land(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
+        dots.add(new EventfulLand(no++, 200));
 
         dots.add(new Hospital(no++));
 
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
-        dots.add(new Land(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
+        dots.add(new EventfulLand(no++, 400));
 
         dots.add(new Mall(no++, 0, 30));
 
-        dots.add(new Land(no++, 600));
-        dots.add(new Land(no++, 600));
-        dots.add(new Land(no++, 600));
-        dots.add(new Land(no++, 600));
-        dots.add(new Land(no++, 600));
-        dots.add(new Land(no++, 600));
+        dots.add(new EventfulLand(no++, 600));
+        dots.add(new EventfulLand(no++, 600));
+        dots.add(new EventfulLand(no++, 600));
+        dots.add(new EventfulLand(no++, 600));
+        dots.add(new EventfulLand(no++, 600));
+        dots.add(new EventfulLand(no++, 600));
 
         dots.add(new Mall(no++, 0, 50));
 
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
-        dots.add(new Land(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
+        dots.add(new EventfulLand(no++, 800));
 
         dots.add(new ChinaListening(no++));
 
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
-        dots.add(new Land(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
+        dots.add(new EventfulLand(no++, 1000));
 
         dots.add(new Audit(no++));
 
