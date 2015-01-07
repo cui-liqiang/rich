@@ -1,32 +1,25 @@
 package com.thoughtworks.rich.dots;
 
 import com.thoughtworks.rich.Player;
-import com.thoughtworks.rich.RichMap;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Dot {
-    protected int no;
-    private final int x;
-    private final int y;
-    private List<Player> players = new ArrayList<Player>();
+import static com.thoughtworks.rich.RichMap.MAP_HEIGHT;
+import static com.thoughtworks.rich.RichMap.MAP_WIDTH;
 
-    @Override
-    public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
-        return result;
-    }
+public abstract class Dot {
+    protected final int no;
+    private final Pos pos;
+    private List<Player> players = new ArrayList<Player>();
 
     public Dot(int no) {
         this.no = no;
-        this.x = getPos().x;
-        this.y = getPos().y;
+        this.pos = pos(no);
     }
 
     public void fillMap(String[][] map) {
-        map[y][x] = this.toString();
+        map[pos.y][pos.x] = this.toString();
     }
 
     abstract public String defaultSymbol();
@@ -54,28 +47,15 @@ public abstract class Dot {
         players.remove(player);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Dot)) return false;
-
-        Dot dot = (Dot) o;
-
-        if (x != dot.x) return false;
-        if (y != dot.y) return false;
-
-        return true;
-    }
-
-    private Pos getPos() {
-        if (no < RichMap.MAP_WIDTH) {
+    private Pos pos(int no) {
+        if (no < MAP_WIDTH) {
             return new Pos(no, 0);
-        } else if (RichMap.MAP_WIDTH <= no && no < RichMap.MAP_WIDTH + RichMap.MAP_HEIGHT - 1) {
-            return new Pos(RichMap.MAP_WIDTH - 1, no - RichMap.MAP_WIDTH + 1);
-        } else if (RichMap.MAP_WIDTH + RichMap.MAP_HEIGHT - 1 <= no && no < RichMap.MAP_WIDTH + RichMap.MAP_HEIGHT - 1 + RichMap.MAP_WIDTH - 1) {
-            return new Pos(RichMap.MAP_WIDTH + RichMap.MAP_HEIGHT - 1 + RichMap.MAP_WIDTH - 1 - no - 1, 7);
+        } else if (MAP_WIDTH <= no && no < MAP_WIDTH + MAP_HEIGHT - 1) {
+            return new Pos(MAP_WIDTH - 1, no - MAP_WIDTH + 1);
+        } else if (MAP_WIDTH + MAP_HEIGHT - 1 <= no && no < MAP_WIDTH + MAP_HEIGHT - 1 + MAP_WIDTH - 1) {
+            return new Pos(MAP_WIDTH + MAP_HEIGHT - 1 + MAP_WIDTH - 1 - no - 1, 7);
         } else {
-            return new Pos(0, RichMap.MAP_WIDTH + RichMap.MAP_HEIGHT - 1 + RichMap.MAP_WIDTH - 1 + RichMap.MAP_HEIGHT - 1 - no - 1);
+            return new Pos(0, MAP_WIDTH + MAP_HEIGHT - 1 + MAP_WIDTH - 1 + MAP_HEIGHT - 1 - no - 1);
         }
     }
 
