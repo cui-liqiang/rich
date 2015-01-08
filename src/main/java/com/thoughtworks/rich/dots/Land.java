@@ -1,7 +1,10 @@
 package com.thoughtworks.rich.dots;
 
+import com.thoughtworks.rich.Player;
+
 public class Land extends Dot {
     private final int price;
+    private Player owner;
 
     public Land(int no, int price) {
         super(no);
@@ -14,6 +17,14 @@ public class Land extends Dot {
 
     public int getPrice() {
         return price;
+    }
+
+    public boolean isOwnedBy(Player player) {
+        return player == owner;
+    }
+
+    public void setOwner(Player owner) {
+        this.owner = owner;
     }
 }
 

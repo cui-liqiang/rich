@@ -2,8 +2,6 @@ package com.thoughtworks.rich;
 
 import org.junit.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.StringContains.containsString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -25,8 +23,7 @@ public class RichGameTest extends IOTestBase{
                 "$                           0\n" +
                 "J0000000000000T0000000000000Z\n";
 
-        String actualOutput = outputStream.toString();
-        assertThat(actualOutput, containsString(map));
+        assertOuputContains(map);
     }
 
     @Test
@@ -64,8 +61,4 @@ public class RichGameTest extends IOTestBase{
         assertOuputContains("你已经购得4号房产，花费200元");
     }
 
-    private void assertOuputContains(String mapWithPlayer) {
-        String actual = outputStream.toString();
-        assertThat(actual, containsString(mapWithPlayer));
-    }
 }

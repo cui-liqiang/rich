@@ -14,7 +14,7 @@ public class PlayerTest {
     public void should_move_by_step() {
         Dot startingPoint = richMap.startingDot();
 
-        Player player = new Player("A", startingPoint);
+        Player player = new Player("A", startingPoint, 1000);
         player.moveTo(richMap.getEventfulDotAfter(startingPoint, 4).getDot());
 
         assertThat(player.locatingDot, sameInstance(richMap.dotAt(4)));

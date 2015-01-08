@@ -6,6 +6,9 @@ import org.junit.Before;
 
 import java.io.*;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.StringContains.containsString;
+
 public class IOTestBase {
     OutputStream outputStream = new ByteArrayOutputStream();
     PrintStream out = new PrintStream(outputStream);
@@ -28,5 +31,10 @@ public class IOTestBase {
     protected void setInput(String inputString) {
         InputStream in = new StringBufferInputStream(inputString);
         System.setIn(in);
+    }
+
+    protected void assertOuputContains(String mapWithPlayer) {
+        String actual = outputStream.toString();
+        assertThat(actual, containsString(mapWithPlayer));
     }
 }

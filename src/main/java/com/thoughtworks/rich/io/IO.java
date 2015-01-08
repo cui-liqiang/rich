@@ -27,7 +27,7 @@ public class IO {
         return "";
     }
 
-    public void print(String s) {
+    public void println(String s) {
         System.out.println(s);
     }
 }
