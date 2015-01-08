@@ -1,5 +1,6 @@
 package com.thoughtworks.rich;
 
+import com.thoughtworks.rich.event.EventfulDot;
 import com.thoughtworks.rich.io.IO;
 
 public class RichGame {
@@ -34,6 +35,8 @@ public class RichGame {
 
     private void work(Player player, RichMap richMap) {
         int steps = dice.roll();
-        player.move(steps, richMap);
+        EventfulDot eventfulDot = richMap.getEventfulDotAfter(player.locatingDot, steps);
+        player.moveTo(eventfulDot.getDot());
+        eventfulDot.handleEvent(player);
     }
 }

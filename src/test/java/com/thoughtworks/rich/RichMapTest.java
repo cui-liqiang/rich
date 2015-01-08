@@ -12,7 +12,7 @@ public class RichMapTest {
 
     @Test
     public void should_get_dot_after_steps() {
-        Dot targetDot = map.nStepsAfterDot(map.dotAt(3), 6);
+        Dot targetDot = map.getEventfulDotAfter(map.dotAt(3), 6).getDot();
         assertThat(targetDot, sameInstance(map.dotAt(9)));
     }
 
@@ -20,7 +20,7 @@ public class RichMapTest {
     public void should_get_dot_within_scope() {
         //max dot index is 69
         Dot lastDotInMap = map.dotAt(69);
-        Dot targetDot = map.nStepsAfterDot(lastDotInMap, 2);
+        Dot targetDot = map.getEventfulDotAfter(lastDotInMap, 2).getDot();
 
         assertThat(targetDot, sameInstance(map.dotAt(1)));
     }
@@ -30,7 +30,7 @@ public class RichMapTest {
         Land landNotInMap = new Land(0, 100);
         int anyStep = 3;
 
-        map.nStepsAfterDot(landNotInMap, anyStep);
+        map.getEventfulDotAfter(landNotInMap, anyStep);
     }
 
 }
