@@ -7,10 +7,11 @@ public class RichGame {
     public static final String QUIT_COMMAND = "quit";
     private static final String WORD_COMMAND = "work";
     private Dice dice;
-    private RichMap richMap = new RichMap();
+    private RichMap richMap = null;
 
     public RichGame(Dice dice) {
         this.dice = dice;
+        richMap = new RichMap();
     }
 
     public void run() {

@@ -12,7 +12,7 @@ public class EventfulLand extends EventfulDot<Land> {
     @Override
     public void handleEvent(Player player) {
         IO io = IO.getInstance();
-        if(player.canAfford(dot.getPrice())) {
+        if(player.canBuyLand(dot)) {
             askToBuy(player, io);
         } else {
             io.println("没有足够的余额，无法购买该土地");
@@ -23,8 +23,7 @@ public class EventfulLand extends EventfulDot<Land> {
         io.println("是否要购买本房产，花费" + dot.getPrice() + "元");
         String line = io.nextLine();
         if ("Y".equals(line)) {
-            player.consumeMoney(dot.getPrice());
-            dot.setOwner(player);
+            player.buyLand(dot);
             io.println("你已经购得" + dot.getNo() + "号房产，花费" + dot.getPrice() + "元");
         }
     }

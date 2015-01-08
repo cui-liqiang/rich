@@ -1,6 +1,7 @@
 package com.thoughtworks.rich;
 
 import com.thoughtworks.rich.dots.Dot;
+import com.thoughtworks.rich.dots.Land;
 
 public class Player {
     private String displayName;
@@ -28,11 +29,12 @@ public class Player {
         return amountOfMoney;
     }
 
-    public void consumeMoney(int price) {
-        amountOfMoney -= price;
+    public void buyLand(Land land) {
+        amountOfMoney -= land.getPrice();
+        land.setOwner(this);
     }
 
-    public boolean canAfford(int price) {
-        return amountOfMoney >= price;
+    public boolean canBuyLand(Land land) {
+        return amountOfMoney >= land.getPrice();
     }
 }
