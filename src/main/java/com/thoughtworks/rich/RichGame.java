@@ -40,4 +40,8 @@ public class RichGame {
         player.moveTo(eventfulDot.getDot());
         eventfulDot.handleEvent(player);
     }
+
+    public static void main(String[] args) {
+        new RichGame(new Dice(6)).run();
+    }
 }
