@@ -1,7 +1,7 @@
 package com.thoughtworks.rich;
 
-import com.thoughtworks.rich.dots.Dot;
-import com.thoughtworks.rich.dots.Land;
+import com.thoughtworks.rich.model.dots.Dot;
+import com.thoughtworks.rich.model.dots.Land;
 
 public class Player {
     private String displayName;

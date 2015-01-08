@@ -1,6 +1,6 @@
 package com.thoughtworks.rich;
 
-import com.thoughtworks.rich.dots.*;
+import com.thoughtworks.rich.model.dots.*;
 import com.thoughtworks.rich.event.*;
 
 import java.util.ArrayList;

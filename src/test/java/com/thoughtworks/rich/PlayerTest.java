@@ -1,6 +1,6 @@
 package com.thoughtworks.rich;
 
-import com.thoughtworks.rich.dots.Dot;
+import com.thoughtworks.rich.model.dots.Dot;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

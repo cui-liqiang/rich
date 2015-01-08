@@ -2,7 +2,7 @@ package com.thoughtworks.rich.event;
 
 import com.thoughtworks.rich.IOTestBase;
 import com.thoughtworks.rich.Player;
-import com.thoughtworks.rich.dots.Land;
+import com.thoughtworks.rich.model.dots.Land;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -47,6 +47,6 @@ public class EventfulLandTest extends IOTestBase{
         assertFalse(land.isOwnedBy(player));
         assertThat(player.getAmountOfMoney(), is(originalAmountOfMoney));
         String prompt = "没有足够的余额，无法购买该土地";
-        assertOuputContains(prompt);
+        assertOutputContains(prompt);
     }
 }

@@ -1,7 +1,7 @@
 package com.thoughtworks.rich.event;
 
 import com.thoughtworks.rich.Player;
-import com.thoughtworks.rich.dots.Land;
+import com.thoughtworks.rich.model.dots.Land;
 import com.thoughtworks.rich.io.IO;
 
 public class EventfulLand extends EventfulDot<Land> {

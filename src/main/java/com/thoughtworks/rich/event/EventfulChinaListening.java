@@ -1,6 +1,6 @@
 package com.thoughtworks.rich.event;
 
-import com.thoughtworks.rich.dots.ChinaListening;
+import com.thoughtworks.rich.model.dots.ChinaListening;
 
 public class EventfulChinaListening extends EventfulDot<ChinaListening> {
     public EventfulChinaListening(ChinaListening chinaListening) {

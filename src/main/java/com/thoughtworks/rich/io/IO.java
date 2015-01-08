@@ -22,9 +22,9 @@ public class IO {
 
     public String nextLine() {
         if(scanner.hasNext()) {
-            return scanner.next();
+            return scanner.nextLine();
         }
-        return "";
+        return null;
     }
 
     public void println(String s) {

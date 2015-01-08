@@ -1,7 +1,7 @@
 package com.thoughtworks.rich.event;
 
 import com.thoughtworks.rich.Player;
-import com.thoughtworks.rich.dots.Dot;
+import com.thoughtworks.rich.model.dots.Dot;
 
 public class EventfulDot<DOT_TYPE extends Dot> {
 

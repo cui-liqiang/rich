@@ -11,32 +11,32 @@ public class RichGameTest extends IOTestBase{
 
     @Test
     public void should_be_able_to_draw_map() {
-        setInput("\n");
+        setInputWithDefaultRoles("\n");
         richGame.run();
 
         String map = "S0000000000000Y0000000000000Z\n" +
-                "$                           0\n" +
-                "$                           0\n" +
-                "$                           0\n" +
-                "$                           0\n" +
-                "$                           0\n" +
-                "$                           0\n" +
-                "J0000000000000T0000000000000Z\n";
+                    "$                           0\n" +
+                    "$                           0\n" +
+                    "$                           0\n" +
+                    "$                           0\n" +
+                    "$                           0\n" +
+                    "$                           0\n" +
+                    "J0000000000000T0000000000000Z\n";
 
-        assertOuputContains(map);
+        assertOutputContains(map);
     }
 
     @Test
     public void should_be_able_to_quit() {
-        setInput("quit\n");
+        setInputWithDefaultRoles("quit\n");
         richGame.run();
 
-        assertOuputContains("游戏结束\n");
+        assertOutputContains("游戏结束\n");
     }
 
     @Test
     public void should_be_able_to_work_for_single_player_named_A() {
-        setInput("work\n");
+        setInputWithDefaultRoles("work\n");
         when(mockDice.roll()).thenReturn(4);
         richGame.run();
 
@@ -48,17 +48,38 @@ public class RichGameTest extends IOTestBase{
                                "$                           0\n" +
                                "$                           0\n" +
                                "J0000000000000T0000000000000Z\n";
-        assertOuputContains(mapWithPlayer);
+        assertOutputContains(mapWithPlayer);
     }
 
     @Test
     public void should_trigger_buying_land_event_when_enter_a_land_without_owner() {
-        setInput("work\n" +
+        setInputWithDefaultRoles("work\n" +
                 "Y\n"); //confirm to by a land);
         when(mockDice.roll()).thenReturn(4);
         richGame.run();
 
-        assertOuputContains("你已经购得4号房产，花费200元");
+        assertOutputContains("你已经购得4号房产，花费200元");
     }
 
+    @Test
+    public void should_be_able_to_choose_players() {
+        setInputWithRoles("ABC",
+                            "work\nN\n\n" +
+                            "work\nN\n\n" +
+                            "work\nN\n\n");
+        when(mockDice.roll()).thenReturn(2, 3, 4);
+
+        richGame.run();
+
+        String promptToSelectUsers = "请选择玩家[A:赵小A, B:钱小B, C:孙小C]";
+        String finalPrintedMap = "S0ABC000000000Y0000000000000Z\n" +
+                                "$                           0\n" +
+                                "$                           0\n" +
+                                "$                           0\n" +
+                                "$                           0\n" +
+                                "$                           0\n" +
+                                "$                           0\n" +
+                                "J0000000000000T0000000000000Z\n";
+        assertOutputContains(promptToSelectUsers, finalPrintedMap);
+    }
 }
