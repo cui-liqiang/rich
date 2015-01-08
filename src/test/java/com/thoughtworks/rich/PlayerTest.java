@@ -7,13 +7,11 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class PlayerTest extends IOTestBase{
+public class PlayerTest {
     private RichMap richMap = new RichMap();
 
     @Test
     public void should_move_by_step() {
-        setInput("Y\n");
-
         Dot startingPoint = richMap.startingPoint();
 
         Player player = new Player("A", startingPoint);
