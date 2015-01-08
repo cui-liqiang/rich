@@ -1,4 +1,4 @@
-package com.thoughtworks.rich.dots;
+package com.thoughtworks.rich.model.dots;
 
 import com.thoughtworks.rich.Player;
 

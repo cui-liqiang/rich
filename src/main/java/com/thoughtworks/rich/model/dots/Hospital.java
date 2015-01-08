@@ -1,4 +1,4 @@
-package com.thoughtworks.rich.dots;
+package com.thoughtworks.rich.model.dots;
 
 public class Hospital extends Dot {
     public Hospital(int no) {

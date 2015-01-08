@@ -1,4 +1,4 @@
-package com.thoughtworks.rich.dots;
+package com.thoughtworks.rich.model.dots;
 
 public class Mall extends Dot {
     private final int minConsume;
