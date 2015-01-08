@@ -4,6 +4,7 @@ import com.thoughtworks.rich.event.EventfulDot;
 import com.thoughtworks.rich.io.IO;
 import com.thoughtworks.rich.model.Role;
 import com.thoughtworks.rich.repository.RoleRepository;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,14 +34,14 @@ public class RichGame {
     private void runPlayers(IO io, List<Player> players) {
         Player player = null;
 
-        while(true) {
+        boolean shouldQuitProgram = false;
+        while(!shouldQuitProgram) {
             player = nextPlayer(players, player);
-            boolean shouldQuitProgram = false;
 
             String command;
             while ((command = io.nextLine())!=null) {
                 if (QUIT_COMMAND.equals(command)) {
-                    System.out.println("游戏结束");
+                    io.println("游戏结束");
                     shouldQuitProgram = true;
                     break;
                 }
@@ -54,11 +55,7 @@ public class RichGame {
             }
 
             if( command == null) {
-                break;
-            }
-
-            if(shouldQuitProgram) {
-                break;
+                shouldQuitProgram = true;
             }
         }
     }
@@ -76,7 +73,8 @@ public class RichGame {
         io.println("请选择玩家"+ allRoles +"\n");
         String selectedRoles = io.nextLine();
         List<Player> players = new ArrayList<Player>();
-        if(!"".equals(selectedRoles)) {
+
+        if(!StringUtils.isEmpty(selectedRoles)) {
             for(int i = 0;i < selectedRoles.length();i++) {
                 Role role = roleRepo.findBySymbol(selectedRoles.charAt(i));
                 if(role != null) {

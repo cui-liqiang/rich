@@ -64,9 +64,9 @@ public class RichGameTest extends IOTestBase{
     @Test
     public void should_be_able_to_choose_players() {
         setInputWithRoles("ABC",
-                            "work\nN\n\n" +
-                            "work\nN\n\n" +
-                            "work\nN\n\n");
+                "work\nN\n\n" +
+                        "work\nN\n\n" +
+                        "work\nN\n\n");
         when(mockDice.roll()).thenReturn(2, 3, 4);
 
         richGame.run();
